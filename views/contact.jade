@@ -1,0 +1,52 @@
+extends includes/layout 
+block midContent 
+      .page-header
+        .container
+          .row
+            .col-md-12
+              h1 Contact us
+      .main(role='main')
+        #content.content.full
+          .container
+            .row
+              .col-md-9
+                .post-content
+                  #gmap(style='height:250px;')
+                    dl
+                      dt(style='color:#900;') Address
+                      dd  -  Uttam Nagar, New Delhi- 110059
+                      br
+                      dt(style='color:#900;') Registerd Office
+                      dd  - Hameedpur, New Delhi-110036
+                      br
+                      dt(style='color:#900;') Mobile No
+                      dd -  +91 - 97xxxxxxxx, +91 - 98xxxxxxxx
+                      br
+                      dt(style='color:#900;') Email-Id
+                      dd
+                        | -  info@tsequipment.in ,  sales@tsequipment.in ,  services@tsequipment.in 
+                  .row
+                    form(action='save',method='post')
+                      .col-md-6.margin-15
+                        .form-group
+                          input.form-control.input-lg(type='text', name='Name', placeholder='Name*')
+                        .form-group
+                          input.form-control.input-lg(type='text', name='Email', placeholder='Email*')
+                        .form-group
+                          input.form-control.input-lg(type='text', name='Phone', placeholder='Phone')
+                      .col-md-6
+                        .form-group
+                          textarea.form-control.input-lg(name='Comment', cols='6', rows='7', placeholder='Message')
+                      .col-md-12
+                        input#submit.btn.btn-primary.btn-lg.pull-right(name='submit', type='submit')
+                    .clearfix
+                    .col-md-12
+                      #message
+              // Start Sidebar
+              .col-md-3.sidebar
+                // Recent Posts Widget
+                .widget-recent-posts.widget(style='margin-top:-40px;')
+                  .sidebar-widget-title
+                    h3 Find us Here
+                  iframe(src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13981.278838945618!2d77.14551346977541!3d28.829340149999997!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1531289851545", width='100%', height='450', frameborder='0', style='border:0')
+  

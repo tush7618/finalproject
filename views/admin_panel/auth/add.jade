@@ -1,0 +1,32 @@
+extends ../includes/admin_layout
+block rightSidebar 
+   h1= title
+   h2= subTitle
+   
+   form(action='/psave',method="post",enctype="multipart/form-data")
+    select.form-control(name="product_cat")
+      if session.isLoggedIn && session.userDetails.u_type=='admin'
+      option(value='bakery') Bakery
+      option(value='BarandBaverage') Bar and Baverage
+      option(value="canteen") Canteen
+      option(value="cold") Cold
+      option(value="displayequipment") Displayequipment
+      option(value="hot") Hot
+      option(value="monitowoc") Monitowoc
+      option(value="prep") Prep
+      option(value="rasntional") Rational
+      option(value="serman") Sirman
+      option(value="TableandTrolly") Table and Trolly
+      option(value="washing") Washing
+    .form-group 
+      label(for="pro") Upload Photo
+      input#l_name.form-control(name="pro", type="file")
+    .form-group 
+      label(for="product_name") Name
+      input#username.form-control(name="product_name", type="text")
+    .form-group 
+      label(for="product_price") Price
+      input#username.form-control(name="product_price", type="text")
+    .form-group 
+      button.btn.btn-lg.btn-primary.btn-block(type="submit") Add Product
+   

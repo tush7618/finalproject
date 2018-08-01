@@ -1,0 +1,27 @@
+extends ../includes/admin_layout
+block rightSidebar 
+   h1= title
+   h2= subTitle
+   
+   form(action='/reg',method="post")
+    .form-group   
+      label(for="f_name") First name
+      input#f_name.form-control(name="f_name", type="text" required=" ")
+    .form-group 
+      label(for="l_name") Last name
+      input#l_name.form-control(name="l_name", type="text" required=" ")
+    .form-group 
+      label(for="username") Username
+      input#username.form-control(name="username", type="text" required=" ")
+    .form-group 
+      label(for="password") Password
+      input#password.form-control(name="password", type="password"  required=" ")
+    .form-group 
+      label(for="mobile") Mobile No.
+      input#password.form-control(name="mobile", type="text" required=" ")  
+    select.form-control(name="u_type")
+      option(value='admin') Admin
+      option(value='customer') Customer
+    .form-group 
+      button.btn.btn-lg.btn-primary.btn-block(type="submit") Add User
+   

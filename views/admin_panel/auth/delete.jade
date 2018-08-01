@@ -1,0 +1,19 @@
+extends ../includes/admin_layout
+block rightSidebar
+  h1= title
+  h2= subTitle
+  table.table.table-bordered.table-hover(border="1")
+   tr
+     th Product Name 
+     th Product Url
+     th Product Category
+     th Product Price
+   each Product in products
+      tr
+        td=Product.product_name
+        td=Product.product_url
+        td=Product.product_cat
+        td=Product.product_price
+        td
+         a.deleteLink.text-danger(href="#{base_url}delete?objectID=#{Product._id}")
+           i.far.fa-trash-alt

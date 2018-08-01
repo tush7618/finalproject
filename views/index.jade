@@ -1,0 +1,406 @@
+
+doctype html
+html.no-js
+  head
+    //
+      Basic Page Needs
+      ==================================================
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    title T.S.Kitchen
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    meta(name='author', content='')
+    //
+      Mobile Specific Metas
+      ==================================================
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0')
+    meta(name='format-detection', content='telephone=no')
+    //
+      CSS
+      ==================================================
+    link(href='newcss/css1.css', rel='stylesheet', type='text/css')
+    link(href='newcss/css2.css', rel='stylesheet', type='text/css')
+    link(href='newcss/css3.css', rel='stylesheet', type='text/css')
+    link(href='plugins/prettyphoto/css/prettyPhoto.html', rel='stylesheet', type='text/css')
+    // Nivo Slider Styles
+    link(rel='stylesheet', href='newcss/css4.css', type='text/css', media='screen')
+    //if lte IE 8
+      link(rel='stylesheet', type='text/css', href='css/ie8.css', media='screen')
+    // Color Style
+    link.alt(href='newcss/css6.css', rel='stylesheet', type='text/css')
+    link(href='style-switcher/css/style-switcher.html', rel='stylesheet', type='text/css')
+    // SLIDER REVOLUTION 4.x CSS SETTINGS
+    link(rel='stylesheet', type='text/css', href='newcss/css7.css', media='screen')
+    link(rel='stylesheet', type='text/css', href='newcss/css9.css', media='screen')
+    // GOOGLE FONTS FOR REVOLUTION SLIDER ONLY
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900', rel='stylesheet', type='text/css')
+    //
+      SCRIPTS
+      ==================================================
+    script(src='js/modernizr.js')
+    // Modernizr
+  body
+    .body
+      // Start Site Header
+      header.site-header
+        .topbar
+          .container
+            .row
+              .col-md-4.col-sm-6.col-xs-8
+                h1.logo
+                  a(href='index')
+                   img(src='#{base_url}images/logo-(2).png', alt='Logo')
+              .col-md-8.col-sm-6.col-xs-4
+                ul.top-navigation.hidden-sm.hidden-xs
+                  li
+                    a(href='index') Home
+                  li
+                    a(href='enquiry') Send Query
+                  li
+                    a(href='contact') Contact us
+                  if session.isLoggedIn
+                    li
+                      a(href='auth/user.html') Welcome #{session.userDetails.f_name}
+                     li
+                      a(href='auth/logout.html') Logout
+                  else
+                    li
+                      a(href='auth/login.html') Login
+                    li
+                      a(href='auth/register.html') Register  
+                   
+                a.visible-sm.visible-xs.menu-toggle(href='#')
+                  img(src='images/toggle.jpg')
+        .main-menu-wrapper
+          .container
+            .row
+              .col-md-12
+                nav.navigation
+                  ul.sf-menu
+                    li
+                      a(href='index') Home
+                    li
+                      a(href='about') About Us
+                    li.megamenu
+                      a(href='#') Our Products
+                      ul.dropdown
+                        li
+                          .megamenu-container.container
+                            .row
+                              .col-md-3
+                                span.megamenu-sub-title
+                                  i.fa.fa-pagelines
+                                  | Fabricated Products
+                                ul.sub-menu
+                                  li
+                                    a(href='#{base_url}productList?product_cat=hot') Hot Equipment
+                                  li
+                                    a(href='#{base_url}productList?product_cat=cold') Cold Equipment
+                                  li
+                                    a(href='#{base_url}productList?product_cat=bakery') Bakery Equipment
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=washing') Washing Equipment
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=BarandBaverage') Bar Beverage Equipment
+                              .col-md-3
+                                span.megamenu-sub-title
+                                  i.fa.fa-clock-o
+                                  | Fabricated Products
+                                ul.sub-menu
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=TableandTrolly') Tables and Trolley
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=displayequipment') Display Equipments
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=canteen') Canteen Equipment
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=prep') Prep Equipments
+                              .col-md-3
+                                span.megamenu-sub-title
+                                  i.fa.fa-cog
+                                  | Imported Products
+                                ul.sub-menu
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=serman') Sirman
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=rasntional') Rational
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=monitowoc') Monitowoc
+                    li
+                      a(href='news') News and Event
+                    li
+                      a(href='enquiry') Enquiry
+                    li
+                      a(href='contact') Contact us
+      // End Site Header
+      // Start Hero Slider
+      .slider-rev-cont
+        .tp-banner-container
+          .tp-banner
+            ul(style='display:none;')
+              // SLIDE
+              li(data-transition='fade', data-slotamount='1', data-masterspeed='1000', data-saveperformance='off', data-title='Next')
+                // MAIN IMAGE
+                img(src='images/slide4try.jpg', alt='fullslide1', data-bgposition='center top', data-bgfit='cover', data-bgrepeat='no-repeat')
+                
+              // SLIDE
+              li(data-transition='fade', data-slotamount='1', data-masterspeed='1000', data-saveperformance='off', data-title='Next')
+                // MAIN IMAGE
+                img(src='images/slide3.jpg', alt='fullslide1', data-bgposition='center top', data-bgfit='cover', data-bgrepeat='no-repeat')
+                // MAIN IMAGE
+                img(src='images/slide1.jpg', alt='fullslide1', data-bgposition='center top', data-bgfit='cover', data-bgrepeat='no-repeat')
+                // MAIN IMAGE
+                img(src='images/slide2.jpg', alt='fullslide1', data-bgposition='center top', data-bgfit='cover', data-bgrepeat='no-repeat')
+             .tp-bannertimer(style='display:none;')
+    
+      // Start Content
+      .main(role='main')
+        #content.content.full
+          .container
+            .row
+              marquee(behavior='scroll', direction='left', onmouseover='this.stop();', onmouseout='this.start();')
+                img(src='images/marquee1.jpg')
+                img(src='images/marquee2.jpg')
+                img(src='images/marquee3.jpg')
+                img(src='images/marquee4.jpg')
+              // Start Featured Blocks
+              .featured-blocks.clearfix
+                .col-md-4.col-sm-4.featured-block
+                  a.img-thumbnail(href='#{base_url}productList?product_cat=hot')
+                    img(src='images/staff.jpg', alt='staff')
+                    strong Hot Equipment
+                    
+                .col-md-4.col-sm-4.featured-block
+                  a.img-thumbnail(href='#{base_url}productList?product_cat=serman')
+                    img(src='images/newhere.jpg', alt='staff')
+                    strong Chinese Equipment
+                   
+                .col-md-4.col-sm-4.featured-block
+                  a.img-thumbnail(href='#{base_url}productList?product_cat=BarandBaverage')
+                    img(src='images/sermons.jpg', alt='staff')
+                    strong Bar Equipment
+                   
+              // End Featured Blocks
+            .row
+              .col-md-8.col-sm-6
+                // Events Listing
+                .listing.events-listing
+                  header.listing-header
+                    h3 Welcome To T. S. Enterprises
+                  section.listing-cont
+                    ul
+                      li.item.event-item
+                        p(style='text-align:justify; width:97%;')
+                          | Ever since establishment in the year 2004, we, 
+                          strong T. S. Enterprises
+                          |  have acquired a revered name in the industry by offering an exceptional range of kitchen equipments and appliances. In addition to this, we are also known for rendering designing and architecture services for kitchens. We strongly believe in the concept that a content employee base can take a company towards the zenith. Therefore, we devise new and innovative ways to keep our valuable human resource with us. These policies include providing ample opportunities for growth, training and development of the skills of the employees within the firm, offering skill developing trainings and programmes to add value to an employee, frequent trips and outings to refresh them and similar other attractive benefits. By doing so, we have become one of the companies worth working for.
+                        a.btn.btn-default.btn-lg(href='about') Read More
+                .spacer-30
+                // Latest News
+                .listing.post-listing
+              // Start Sidebar
+              .col-md-4.col-sm-6
+                // Latest Sermons
+                .listing.sermons-listing
+                  header.listing-header
+                    h3 Our Products
+                  section.listing-cont
+                    ul
+                      ul#nav
+                        li
+                          a(href='#{base_url}productList?product_cat=hot')
+                            img(src='images/t1.png')
+                            | Hot Equipment
+                        li
+                          a(href='#{base_url}productList?product_cat=cold')
+                            img(src='images/t1.png')
+                            | Cold Equipment
+                        li
+                          a(href='#{base_url}productList?product_cat=bakery')
+                            img(src='images/t1.png')
+                            | Bakery Equipment
+                        li
+                          a(href='#{base_url}productList?product_cat=washing')
+                            img(src='images/t1.png')
+                            | Washing Equipment
+                        li
+                          a(href='#{base_url}productList?product_cat=TableandTrolly')
+                            img(src='images/t1.png')
+                            | Tables and Trolley
+      // Start Featured Gallery
+      .featured-gallery
+        .container
+          .row
+            h4 Our Clients
+            marquee(behavior='scroll', direction='left', onmouseover='this.stop();', onmouseout='this.start();')
+              img(src='Client%20Logo%20Ts%20Equipment/b4.jpg')
+              img(src='Client%20Logo%20Ts%20Equipment/b1.jpg')
+              img(src='Client%20Logo%20Ts%20Equipment/b2.jpg')
+              img(src='Client%20Logo%20Ts%20Equipment/a1.jpg')
+              img(src='Client%20Logo%20Ts%20Equipment/a2.jpg')
+              img(src='Client%20Logo%20Ts%20Equipment/a3.jpg')
+              img(src='Client%20Logo%20Ts%20Equipment/a4.jpg')
+              img(src='Client%20Logo%20Ts%20Equipment/17.png')
+              img(src='Client%20Logo%20Ts%20Equipment/18.png')
+              img(src='Client%20Logo%20Ts%20Equipment/19.png')
+              img(src='Client%20Logo%20Ts%20Equipment/20.png')
+              img(src='Client%20Logo%20Ts%20Equipment/2.png')
+              img(src='Client%20Logo%20Ts%20Equipment/3.png')
+              img(src='Client%20Logo%20Ts%20Equipment/4.png')
+              img(src='Client%20Logo%20Ts%20Equipment/5.png')
+              img(src='Client%20Logo%20Ts%20Equipment/6.png')
+              img(src='Client%20Logo%20Ts%20Equipment/7.png')
+              img(src='Client%20Logo%20Ts%20Equipment/8.png')
+              img(src='Client%20Logo%20Ts%20Equipment/9.png')
+              img(src='Client%20Logo%20Ts%20Equipment/10.png')
+              img(src='Client%20Logo%20Ts%20Equipment/11.png')
+              img(src='Client%20Logo%20Ts%20Equipment/12.png')
+              img(src='Client%20Logo%20Ts%20Equipment/13.png')
+              img(src='Client%20Logo%20Ts%20Equipment/14.png')
+              img(src='Client%20Logo%20Ts%20Equipment/15.png')
+      footer.site-footer
+        .container
+          .row
+            // Start Footer Widgets
+            .col-md-4.col-sm-4.widget.footer-widget
+              h4.footer-widget-title About our Company
+              p(style='text-align:justify;')
+                | Ever since establishment in the year 2004, we, 
+                strong T. S. Enterprises
+                |  have acquired a revered name in the industry by offering an exceptional range of kitchen equipments and appliances. In addition to this, we are also known for rendering designing and architecture services for kitchens.
+                br
+              p(align='right')
+                a(href='about') Read More
+              p
+            .col-md-4.col-sm-4.widget.footer-widget
+              h4.footer-widget-title Our Products
+              li
+                a(href='#{base_url}productList?product_cat=hot') Hot Equipment
+              li
+                a(href='#{base_url}productList?product_cat=cold') Cold Equipment
+              li
+                a(href='#{base_url}productList?product_cat=bakery') Bakery Equipment
+              li
+                a(href='#{base_url}productList?product_cat=washing') Washing Equipment
+              li
+                a(href='#{base_url}productList?product_cat=BarandBaverage') Bar Beverage Equipment
+              li
+                a(href='#{base_url}productList?product_cat=TableandtTrolly') Tables and Trolley
+              li
+                a(href='#{base_url}productList?product_cat=displayequipment') Display Equipments
+            .col-md-4.col-sm-4.widget.footer-widget
+              h4.footer-widget-title Contact us
+              dl
+                dt Address
+                dd Hameedpur,Delhi-110036
+                dt Mobile No
+                dd +91 - 9711XXXXXX, +91 - 9852XXXXXX
+                dt Email-Id
+                dd sales@tsequipment.in , services@tsequipment.in 
+              h4.footer-widget-title Follow us on
+              a(href='https://www.facebook.com', target='_blank')
+                img(src='images/face.png', width='25', height='25')
+              a(href='https://www.linkedin.com')
+                img(src='images/in.png', width='25', height='25')
+              a(href='https://www.twitter.com')
+                img(src='images/twitter.png', width='25', height='25')
+      footer.site-footer-bottom
+        .container
+          .row
+            .copyrights-col-left.col-md-6.col-sm-6
+            .copyrights-col-right.col-md-6.col-sm-6
+              p(align='right')
+                a(href='index') Home
+                |  / 
+                a(href='about') About us
+                |  / 
+                a(href='cold') Our Products
+                |  / 
+                a(href='news') News and Events
+                |  / 
+                a(href='enquiry') Enquiry
+                |  / 
+                a(href='contact') Contact us
+      // End Footer
+      script(src='js/jquery-2.0.0.min.js')
+      // Jquery Library Call
+      script(src='js/prettyphoto.js')
+      // PrettyPhoto Plugin
+      script(src='js/helper-plugins.js')
+      // Plugins
+      script(src='js/bootstrap.js')
+      // UI
+      script(src='js/waypoints.js')
+      // Waypoints
+      script(src='js/mediaelement-and-player.min.js')
+      // MediaElements
+      script(src='js/init.js')
+      // All Scripts
+      script(src='js/jquery.flexslider.js')
+      // FlexSlider
+      script(src='js/jquery.countdown.min.js')
+      // Jquery Timer
+      script(src='js/jquery_cookie.js')
+      script(src='js/script.js')
+      link(rel='stylesheet', type='text/css', href='css/sidemenu.css')
+      // SLIDER REVOLUTION 4.x SCRIPTS
+      script(type='text/javascript', src='newjs/slider1.js')
+      script(type='text/javascript', src='newjs/slider2.js')
+      script(type='text/javascript', src='newjs/modnizer.js')
+      script(type='text/javascript').
+        jQuery(document).ready(function() {
+        jQuery('.tp-banner').show().revolution(
+        {
+        dottedOverlay:"none",
+        delay:9000,
+        startwidth:1060,
+        startheight:500,
+        hideThumbs:200,
+        thumbWidth:100,
+        thumbHeight:50,
+        thumbAmount:5,
+        navigationType:"none",
+        navigationArrows:"solo",
+        navigationStyle:"preview2",
+        touchenabled:"on",
+        onHoverStop:"on",
+        swipe_velocity: 0.7,
+        swipe_min_touches: 1,
+        swipe_max_touches: 1,
+        drag_block_vertical: false,
+        keyboardNavigation:"on",
+        navigationHAlign:"center",
+        navigationVAlign:"bottom",
+        navigationHOffset:0,
+        navigationVOffset:20,
+        soloArrowLeftHalign:"left",
+        soloArrowLeftValign:"center",
+        soloArrowLeftHOffset:20,
+        soloArrowLeftVOffset:0,
+        soloArrowRightHalign:"right",
+        soloArrowRightValign:"center",
+        soloArrowRightHOffset:20,
+        soloArrowRightVOffset:0,
+        shadow:0,
+        fullWidth:"on",
+        fullScreen:"off",
+        spinner:"spinner0",
+        stopLoop:"off",
+        stopAfterLoops:-1,
+        stopAtSlide:-1,
+        shuffle:"off",
+        autoHeight:"off",
+        forceFullWidth:"off",
+        hideThumbsOnMobile:"off",
+        hideNavDelayOnMobile:1500,
+        hideBulletsOnMobile:"off",
+        hideArrowsOnMobile:"off",
+        hideThumbsUnderResolution:0,
+        hideSliderAtLimit:0,
+        hideCaptionAtLimit:0,
+        hideAllCaptionAtLilmit:0,
+        startWithSlide:0
+        });
+        });	//ready

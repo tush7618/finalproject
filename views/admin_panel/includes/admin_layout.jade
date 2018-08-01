@@ -1,0 +1,20 @@
+extends ../../includes/layout
+block veriable
+        - base_url = base_url
+    block midContent
+      .container
+        // Page Heading/Breadcrumbs
+        h1.mt-4.mb-3
+          | Admin Panel
+        .row
+          // Sidebar Column
+          .col-lg-3.mb-4
+           .list-group
+           if session.isLoggedIn && session.userDetails.u_type=='admin'
+              a.list-group-item(href='#{base_url}auth/add') Add Products
+              |             
+              a.list-group-item(href='#{base_url}auth/delete') Delete Products     
+          .col-lg-9.mb-4
+            block rightSidebar
+        // /.row
+    

@@ -1,0 +1,234 @@
+block veriable
+  - base_url = base_url
+  - session = session
+doctype html
+html
+ head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title T.S.Kitchen
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    meta(name='author', content='')
+    //
+      Mobile Specific Metas
+      ==================================================
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0')
+    meta(name='format-detection', content='telephone=no')
+    //
+      CSS
+      ==================================================
+    link(href='#{base_url}css/bootstrap.css', rel='stylesheet', type='text/css')
+    link(href='#{base_url}css/mediaelementplayer.css', rel='stylesheet', type='text/css')
+    link(href='#{base_url}css/style.css', rel='stylesheet', type='text/css')
+    link(href='#{base_url}css/prettyPhoto.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', type='text/css', href='#{base_url}css/sidemenu.css')
+    //if lte IE 8
+      link(rel='stylesheet', type='text/css', href='#{base_url}css/ie8.css', media='screen')
+    // Color Style
+    link.alt(href='#{base_url}css/color1.css', rel='stylesheet', type='text/css')
+    link(href='#{base_url}css/style-switcher.css', rel='stylesheet', type='text/css')
+    style(type='text/css').
+      .protittle{
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight:bold;
+      font-size:14px;
+      color:#000;
+      text-align:center;
+      padding:10px;
+      }
+    //
+      SCRIPTS
+      ==================================================
+    script(src='#{base_url}js/modernizr.js')
+  body(style='background-image:none;')
+    .body
+      header.site-header
+        .topbar
+          .container
+            .row
+              .col-md-4.col-sm-6.col-xs-8
+                h1.logo
+                  a(href='#{base_url}index')
+                    img(src='#{base_url}images/logo-(2).png', alt='Logo')
+              .col-md-8.col-sm-6.col-xs-4
+                ul.top-navigation.hidden-sm.hidden-xs
+                  li
+                    a(href='#{base_url}index') Home
+                  li
+                    a(href='#{base_url}enquiry') Send Query
+                  li
+                    a(href='#{base_url}contact') Contact us
+                  if session.isLoggedIn
+                    li
+                      a(href='#{base_url}auth/user.html') Welcome #{session.userDetails.f_name}
+                     li
+                      a(href='#{base_url}auth/logout.html') Logout
+                  else
+                    li
+                      a(href='#{base_url}auth/login.html') Login
+                    li
+                     a(href='#{base_url}auth/register.html') Register    
+                   
+                a.visible-sm.visible-xs.menu-toggle(href='#')
+                  img(src='images/toggle.jpg')
+
+                a.visible-sm.visible-xs.menu-toggle(href='#{base_url}#')
+                  img(src='#{base_url}images/toggle.jpg')
+        .main-menu-wrapper
+          .container
+            .row
+              .col-md-12
+                nav.navigation
+                  ul.sf-menu
+                    li
+                      a(href='#{base_url}index') Home
+                    li
+                      a(href='#{base_url}about') About Us
+                    li.megamenu
+                      a(href='#{base_url}#') Our Products
+                      ul.dropdown
+                        li
+                          .megamenu-container.container
+                            .row
+                              .col-md-3
+                                span.megamenu-sub-title
+                                  i.fa.fa-pagelines
+                                  | Fabricated Products
+                                ul.sub-menu
+                                  li
+                                    a(href='#{base_url}productList?product_cat=hot') Hot Equipment
+                                  li
+                                    a(href='#{base_url}productList?product_cat=cold') Cold Equipment
+                                  li
+                                    a(href='#{base_url}productList?product_cat=bakery') Bakery Equipment
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=washing') Washing Equipment
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=BarandBaverage') Bar Beverage Equipment
+                              .col-md-3
+                                span.megamenu-sub-title
+                                  i.fa.fa-clock-o
+                                  | Fabricated Products
+                                ul.sub-menu
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=TableandTrolly') Tables and Trolley
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=displayequipment') Display Equipments
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=canteen') Canteen Equipment
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=prep') Prep Equipments
+                              .col-md-3
+                                span.megamenu-sub-title
+                                  i.fa.fa-cog
+                                  | Imported Products
+                                ul.sub-menu
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=serman') Sirman
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=rasntional') Rational
+                                  li
+                                    a(href= '#{base_url}productList?product_cat=monitowoc') Monitowoc
+                    li
+                      a(href='#{base_url}news') News & Event
+                    li
+                      a(href='#{base_url}enquiry') Enquiry
+                    li
+                      a(href='#{base_url}contact') Contact us
+      // End Site Header
+      // Start Nav Backed Header
+      .nav-backed-header.parallax(style='background-image:url(images/images.jpg);')
+        .container
+          .row
+            .col-md-12
+              ol.breadcrumb
+              
+      // End Nav Backed Header
+      // Start Page Header
+      block midContent
+      footer.site-footer
+        .container
+          .row
+            // Start Footer Widgets
+            .col-md-4.col-sm-4.widget.footer-widget
+              h4.footer-widget-title About our Company
+              p(style='text-align:justify;')
+                | Ever since establishment in the year 2004, we, 
+                strong T. S. Enterprises
+                |  have acquired a revered name in the industry by offering an exceptional range of kitchen equipments and appliances. In addition to this, we are also known for rendering designing and architecture services for kitchens.
+                br
+              p(align='right')
+                a(href='#{base_url}about') Read More
+              p
+            .col-md-4.col-sm-4.widget.footer-widget
+              h4.footer-widget-title Our Products
+              li
+                a(href='#{base_url}productList?product_cat=hot') Hot Equipment
+              li
+                a(href='#{base_url}productList?product_cat=cold') Cold Equipment
+              li
+                a(href='#{base_url}productList?product_cat=bakery') Bakery Equipment
+              li
+                a(href='#{base_url}productList?product_cat=washing') Washing Equipment
+              li
+                a(href='#{base_url}productList?product_cat=BarandBaverage') Bar Beverage Equipment
+              li
+                a(href='#{base_url}productList?product_cat=TableandTrolly') Tables and Trolley
+              li
+                a(href='#{base_url}productList?product_cat=displayequipment') Display Equipments
+            .col-md-4.col-sm-4.widget.footer-widget
+              h4.footer-widget-title Contact us
+              dl
+                dt Address
+                dd Hameedpur,Delhi-110036
+                dt Mobile No
+                dd +91 - 9711XXXXXX, +91 - 9852XXXXXX
+                dt Email-Id
+                dd sales@tsequipment.in , services@tsequipment.in 
+              h4.footer-widget-title Follow us on
+              a(href='#{base_url}https://www.facebook.com/', target='_blank')
+                img(src='#{base_url}images/face.png', width='25', height='25')
+              a(href='#{base_url}https://www.linkedin.com/')
+                img(src='#{base_url}images/in.png', width='25', height='25')
+              a(href='#{base_url}https://www.twitter.com/')
+                img(src='#{base_url}images/twitter.png', width='25', height='25')
+      footer.site-footer-bottom
+        .container
+          .row
+            .copyrights-col-left.col-md-6.col-sm-6
+             
+            .copyrights-col-right.col-md-6.col-sm-6
+              p(align='right')
+                a(href='#{base_url}index') Home
+                |  / 
+                a(href='#{base_url}about') About us
+                |  / 
+                a(href='#{base_url}cold') Our Products
+                |  / 
+                a(href='#{base_url}news') News & Event
+                |  / 
+                a(href='#{base_url}enquiry') Enquiry
+                |  / 
+                a(href='#{base_url}contact') Contact us
+      // End Footer
+    script(src='#{base_url}js/jquery-2.0.0.min.js')
+    // Jquery Library Call
+    script(src='#{base_url}js/prettyphoto.js')
+    // PrettyPhoto Plugin
+    script(src='#{base_url}js/helper-plugins.js')
+    // Plugins
+    script(src='#{base_url}js/bootstrap.js')
+    // UI
+    script(src='#{base_url}js/waypoints.js')
+    // Waypoints
+    script(src='#{base_url}js/mediaelement-and-player.min.js')
+    // MediaElements
+    script(src='#{base_url}js/init.js')
+    // All Scripts
+    script(src='#{base_url}js/jquery.flexslider.js')
+    // FlexSlider
+    script(src='#{base_url}js/jquery.countdown.min.js')
+    // Jquery Timer
+    script(src='#{base_url}js/jquery_cookie.js')
+    script(src='#{base_url}js/script.js')
+    // Style Switcher Start

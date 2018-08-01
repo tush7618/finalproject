@@ -1,0 +1,16 @@
+extends ../includes/admin_layout
+block rightSidebar
+  h1= title
+  h2= subTitle
+  table.table.table-bordered.table-hover(border="1")
+    tr
+        th First name 
+        th Last Name 
+        th Username
+        th Mobile No.
+        tr
+            td=session.userDetails.f_name
+            td=session.userDetails.l_name
+            td=session.userDetails.username
+            td=session.userDetails.mobile
+            

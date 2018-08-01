@@ -1,0 +1,95 @@
+extends includes/layout 
+block midContent 
+      .page-header
+        .container
+          .row
+            .col-md-12
+              h1 About Us
+      // End Notice Bar
+      // Start Content
+      .main(role='main')
+        #content.content.full
+          .container
+            .row
+              .row
+                .col-md-8.col-sm-6
+                  // Events Listing
+                  .listing.events-listing
+                    header.listing-header
+                      h3 Welcome To Our Profile !
+                    section.listing-cont
+                      ul
+                        li.item.event-item
+                          p(style=' text-align:justify; width:97%; padding:5px;')
+                            | Ever since establishment in the year 2004, we, 
+                            strong T. S. Enterprises
+                            |  have acquired a revered name in the industry by offering an exceptional range of kitchen equipments and appliances. In addition to this, we are also known for rendering designing and architecture services for kitchens. We strongly believe in the concept that a content employee base can take a company towards the zenith. Therefore, we devise new and innovative ways to keep our valuable human resource with us. These policies include providing ample opportunities for growth, training & development of the skills of the employees within the firm, offering skill developing trainings and programmes to add value to an employee, frequent trips & outings to refresh them and similar other attractive benefits. By doing so, we have become one of the companies worth working for.
+                          p(style=' text-align:justify;width:90%; padding:5px;')
+                            | Our ethics lead us to constantly improve ourselves in terms of our products as well as services. We constantly ensure that the consignments delivered from our end are at par with the international benchmarks of quality. We have also set up a customer support and grievance cell where all the suggestions as well as the complaints of the clients are patiently heard and solved. By following untrodden paths, we have been successful in outperforming our competitors and acquiring the numero uno position in the industry.
+                          a.btn.btn-default.btn-lg(href='#{base_url}contact') Contact us
+                  .spacer-30
+                  // Latest News
+                  .listing.post-listing
+                // Start Sidebar
+                .col-md-4.col-sm-6
+                  // Latest Sermons
+                  .listing.sermons-listing
+                    header.listing-header
+                      h3 Our Products
+                    section.listing-cont
+                      ul
+                        ul#nav
+                          li
+                            a(href= '#{base_url}productList?product_cat=hot')
+                              img(src='#{base_url}images/t1.png')
+                              | Hot Equipment
+                          li
+                            a(href= '#{base_url}productList?product_cat=cold')
+                              img(src='#{base_url}images/t1.png')
+                              | Cold Equipment
+                          li
+                            a(href= '#{base_url}productList?product_cat=bakery')
+                              img(src='#{base_url}images/t1.png')
+                              | Bakery Equipment
+                          li
+                            a(href= '#{base_url}productList?product_cat=washing')
+                              img(src='#{base_url}images/t1.png')
+                              | Washing Equipment
+                          li
+                            a(href= '#{base_url}productList?product_cat=TableandTrolly')
+                              img(src='#{base_url}images/t1.png')
+                              | Tables and Trolley
+                          li
+                            a(href='#{base_url}productList?product_cat=BarandBaverage')
+                              img(src='#{base_url}images/t1.png')
+                              | Bar & Baverage
+                          li
+                            a(href= '#{base_url}productList?product_cat=displayequipment')
+                              img(src='#{base_url}images/t1.png')
+                              | Display Equipments
+                          li
+                            a(href= '#{base_url}productList?product_cat=canteen')
+                              img(src='#{base_url}images/t1.png')
+                              | Canteen Equipment
+        // Start Featured Gallery
+        .featured-gallery
+          .container
+            .row
+              .col-md-3.col-sm-3
+                h4 Updates from our Products
+                a.btn.btn-default.btn-lg(href='#{base_url}cold') See All Products
+              .col-md-3.col-sm-3.post.format-image
+                a.media-box(href='#{base_url}hot/Electric-Ceramic-Hot-with-Cabinet.jpg', data-rel='prettyPhoto[Gallery]')
+                  img(src='#{base_url}hot/Electric-Ceramic-Hot-with-Cabinet.jpg', alt='')
+                  span.zoom(style='width: 230px; height: 153px; line-height: 153px;')
+                    i.fa.fa-search
+              .col-md-3.col-sm-3.post.format-video
+                a.media-box(href='#{base_url}bakery/buntoaster.jpg', data-rel='prettyPhoto[Gallery]')
+                  img(src='#{base_url}bakery/buntoaster.jpg', alt='')
+                  span.zoom(style='width: 230px; height: 153px; line-height: 153px;')
+                    i.fa.fa-play
+              .col-md-3.col-sm-3.post.format-image
+                a.media-box(href='#{base_url}hot/4burner.jpg', data-rel='prettyPhoto[Gallery]')
+                  img(src='#{base_url}hot/4burner.jpg', alt='')
+                  span.zoom(style='width: 230px; height: 153px; line-height: 153px;')
+                    i.fa.fa-search

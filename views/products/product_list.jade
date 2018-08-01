@@ -1,0 +1,27 @@
+extends ../includes/layout 
+block midContent 
+      .page-header
+        .container
+          .row
+           if session.isLoggedIn
+             .col-md-6
+              h1=title
+           else
+             a(href='auth/register.html')
+               h1 Please Register for Our Products
+      .main(role='main')
+        #content.content.full
+          .container
+           if session.isLoggedIn
+            .row
+              ul
+                each eachProduct in products
+                    li.col-md-3.col-sm-3.grid-item.post.format-video
+                        .product_cat
+                        .grid-item-inner
+                            a.media-box(href='#{base_url}#{eachProduct.product_url}', data-rel='prettyPhoto')
+                            img(src='#{base_url}#{eachProduct.product_url}', style='border:1px solid;')
+                        p.protittle #{eachProduct.product_name}
+                        p.price.text-center Price: #{eachProduct.product_price}
+                
+                
